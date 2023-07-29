@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const Task = require('./models/task');
+require('dotenv').config();
 const db = require('./DB');
 
 const app = express();
@@ -99,7 +100,7 @@ app.delete('/tasks/:id', async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
